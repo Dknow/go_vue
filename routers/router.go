@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"go_vue/routers/controllers"
-	//"database/sql"
-	//_ "github.com/mattn/go-sqlite3"
+	//"gorm.io/gorm"
+	//"gorm.io/driver/sqlite"
 )
 
 // db
@@ -15,6 +15,7 @@ const (
 	dbDriverName = "sqlite3"
 	dbName       = "./data.db3"
 )
+
 
 var count int32
 
