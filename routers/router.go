@@ -4,13 +4,9 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"go_vue/routers/controllers"
-	//"gorm.io/gorm"
-	//"gorm.io/driver/sqlite"
 )
 
-// db
-// mysql？ sqlite？
-// orm？
+
 const (
 	dbDriverName = "sqlite3"
 	dbName       = "./data.db3"
@@ -24,6 +20,8 @@ func ApiRoutersInit(r *gin.Engine) {
 	{
 		apiRouters.GET("/count",countMiddleware, Count)
 		apiRouters.GET("/GetWebsiteList", countMiddleware,controllers.GetWebsiteList)
+		apiRouters.GET("/GetCategoryList",countMiddleware, controllers.GetCategoryList)
+
 	}
 }
 func AdminRoutersInit(r *gin.Engine) {
@@ -32,6 +30,9 @@ func AdminRoutersInit(r *gin.Engine) {
 		adminRouters.GET("/AddWebsite",countMiddleware, controllers.AddWebsite)
 		adminRouters.GET("/DeleteWebsite",countMiddleware, controllers.DeleteWebsite)
 		adminRouters.GET("/EditWebsite",countMiddleware, controllers.EditWebsite)
+		//adminRouters.GET("/AddWebsite",countMiddleware, controllers.AddWebsite)
+		//adminRouters.GET("/AddWebsite",countMiddleware, controllers.AddWebsite)
+
 	}
 }
 // get website list
@@ -54,3 +55,4 @@ func Count(c *gin.Context) {
 	})
 }
 //	middleware
+
